@@ -1,6 +1,5 @@
 package com.GPTProject.controller;
 
-import com.GPTProject.config.AuthUser;
 import com.GPTProject.entity.Account;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
 
     @GetMapping("/")
-    public String home(@AuthUser Account account, Model model){
+    public String home(Account account, Model model){
         if(account!=null){
             model.addAttribute(account);
         }
